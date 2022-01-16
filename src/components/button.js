@@ -1,11 +1,5 @@
 import React from "react";
-import styled, { css } from 'styled-components';
-
-
-//функция для получения свойств theme
-const themeColor = (props) => {
-    // return props.color || props.theme.colors.primary
-};
+import styled from 'styled-components';
 
 // набор стилей по состоянию одного props
 const StyledButton = styled.button`
@@ -20,25 +14,13 @@ const StyledButton = styled.button`
     box-shadow: none;
     transition: box-shadow 0.5s;
     &:hover {
-        box-shadow: 0 0 10px ${themeColor};
+        box-shadow: 0 0 10px ${props=>props.theme.fontColor};
     }
     align-self: ${props => props.align || 'stretch'};
-
-    ${props => props.primary && css`
-        color: ${themeColor};
-        background: ${props => props.background || 'black'};
-    `}
-
-    ${props => props.outlined && css`
-        color: ${themeColor};
-        border: 1px solid ${themeColor};
-        background: transparent;
-    `}
+    color: ${props=>props.theme.fontColor};
+    border: 1px solid ${props=>props.theme.fontColor};
+    background: transparent;
 `
-//расширение стилей компонента, параметром передается наследуемый компонент
-// const LargeButton = styled(StyledButton)`
-//     font-size: 32px;
-// `
 
 const Button = (props) => {
     return (

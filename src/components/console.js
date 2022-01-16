@@ -11,6 +11,8 @@ const StyledConsole = styled.textarea`
     font-size: 24px;
     border: none;
     resize: none;
+    background: ${props => props.theme.background};
+    color: ${props => props.theme.fontColor};
     &:focus {
         outline: none;
     }
@@ -42,6 +44,7 @@ const Console = ({ color, ...props }) => {
             </Flex>
             <StyledConsole
                 value={chars}
+                autoFocus
                 onChange={onCharSet}
                 onKeyPress={onKeyPress}
                 color={color}
