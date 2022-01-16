@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from "./themes";
 
 import Console from "./components/console";
