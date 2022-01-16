@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from 'styled-components';
 import Flex from "./flex";
 import Line from "./line";
@@ -18,7 +18,13 @@ const StyledConsole = styled.textarea`
     }
 `
 
-const Console = ({ color, ...props }) => {
+const Console = ({ ...props }) => {
+    //способ установки автофокуса при рендере компонента
+    const textInput = useRef(null);
+    useEffect(() => {
+        textInput.current.focus();
+    }, [props]);
+
     const [chars, setChars] = useState('')
     const [lines, setLines] = useState(['C:/Users/Name>'])
 
@@ -39,15 +45,15 @@ const Console = ({ color, ...props }) => {
         <Flex>
             <Flex direction={'column'} margin={'0px 5px'}>
                 {lines.map((line, index) => 
-                    <Line key={index} color={color}>{line}</Line>
+                    <Line key={index} >{line}</Line>
                 )}
             </Flex>
             <StyledConsole
                 value={chars}
-                autoFocus
+                // autoFocus параметр автофокуса при первом рендере компонента
+                ref={textInput}
                 onChange={onCharSet}
                 onKeyPress={onKeyPress}
-                color={color}
                 {...props} />
             <Button press={clearConsole} outlined align={'flex-end'}>clear</Button>
         </Flex>
