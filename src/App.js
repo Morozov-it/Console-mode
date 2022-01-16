@@ -5,6 +5,7 @@ import { lightTheme, darkTheme } from "./themes";
 import Console from "./components/console";
 import Flex from "./components/flex";
 import Title from "./components/title";
+import Switch from "./components/switch";
 
 // создание стилизованного компонента для оборачивания основного компонента
 const AppWrapper = styled.div`
@@ -29,7 +30,9 @@ const App = () => {
         <Flex justify={'center'}>
           <Title >Console cmd. fake</Title>
         </Flex>
-        <button onClick={() => themeToggler()}>change</button>
+        <Flex justify={'flex-end'}>
+          <Switch press={themeToggler} title={theme} />
+        </Flex>
         <Flex direction={'column'} margin={'10px 0px'}>
           <Console />
         </Flex>

@@ -4,7 +4,6 @@ import Flex from "./flex";
 import Line from "./line";
 import Button from "./button";
 
-// вложенные стили, аналог scss
 const StyledConsole = styled.textarea`
     width: 100%;
     height: 70vh;
@@ -55,7 +54,9 @@ const Console = ({ ...props }) => {
                 onChange={onCharSet}
                 onKeyPress={onKeyPress}
                 {...props} />
-            <Button press={clearConsole} outlined align={'flex-end'}>clear</Button>
+            <Button
+                press={clearConsole}
+                align={'flex-end'}>clear</Button>
         </Flex>
     )
 }

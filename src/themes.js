@@ -6,13 +6,15 @@ const media = {
 export const lightTheme = {
     ...media,
     background: '#fff',
-    fontColor: '#000'
+    fontColor: '#000',
+    title: 'light'
 };
 
 export const darkTheme = {
     ...media,
     background: '#000',
-    fontColor: '#fff'
+    fontColor: '#fff',
+    title: 'dark'
 };
 
 
