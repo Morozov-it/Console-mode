@@ -2,7 +2,7 @@
   "name": "styled",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://morozov-it.github.io/Styled-console",
+  "homepage": "http://morozov-it.github.io/Console-mode",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
